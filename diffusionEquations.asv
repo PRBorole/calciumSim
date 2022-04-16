@@ -81,6 +81,15 @@ for i = 1:nTrig
         else
             jSYNPCa(i) = 2*R(pt)*jINCay/(R(pt)^2-r(pt)^2);
         end
+        jSYNPCa
+    elseif t>25000 && t<25010
+        jINCay = slopeCa*(t-25000)+jINCa;
+        if flag
+            jSYNPCa(i) = 2*jINCay/meanEdge;
+        else
+            jSYNPCa(i) = 2*R(pt)*jINCay/(R(pt)^2-r(pt)^2);
+        end
+        jSYNPCa
     else
         jSYNPCa(i) = 0;
     end
